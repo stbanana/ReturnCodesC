@@ -26,11 +26,20 @@
 #define _RERURNCC_LANGUAGE_ 0
 #endif
 
+#if _RERURNCC_LANGUAGE_ == 0
 /* English */
 #include "inc_i18n/ReturnCodesC_en.h"
+
+#elif _RERURNCC_LANGUAGE_ == 1
 /* 简体中文 */
 #include "inc_i18n/ReturnCodesC_zh_cn.h"
+
+#elif _RERURNCC_LANGUAGE_ == 2
 /* 正體中文 */
 #include "inc_i18n/ReturnCodesC_zh_tw.h"
+
+#else
+#error "Unsupported language version defined in _RERURNCC_LANGUAGE_"
+#endif
 
 #endif
